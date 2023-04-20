@@ -45,8 +45,9 @@ void oled_render_layer_state(void) {
     break;
   }
 
+  int top = int(get_highest_layer(layer_state));
   oled_write("\n", false);
-  oled_write(get_highest_layer(layer_state), false);
+  oled_write(top, false);
 }
 
 void oled_render_led_state(void) {
