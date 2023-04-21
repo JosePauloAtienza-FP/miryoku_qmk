@@ -46,6 +46,7 @@ void oled_render_layer_state(void) {
   }
 
   oled_write("\n", false);
+  oled_write(get_u8_str(get_highest_layer(layer_state), ' '), false);
 }
 
 void oled_render_led_state(void) {
