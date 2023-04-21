@@ -22,11 +22,14 @@ void oled_render_layer_state(void) {
   case BASE:
     oled_write("Base", false);
     break;
+  case EXTRA:
+    oled_write("Extra", false);
+    break;
+  case TAP:
+    oled_write("Tap", false);
+    break;
   case BUTTON:
     oled_write("Button", false);
-    break;
-  case MEDIA:
-    oled_write("Media", false);
     break;
   case NAV:
     oled_write("Navigation", false);
@@ -34,11 +37,14 @@ void oled_render_layer_state(void) {
   case MOUSE:
     oled_write("Mouse", false);
     break;
-  case SYM:
-    oled_write("Symbol", false);
+  case MEDIA:
+    oled_write("Media", false);
     break;
   case NUM:
     oled_write("Number", false);
+    break;
+  case SYM:
+    oled_write("Symbol", false);
     break;
   case FUN:
     oled_write("Function", false);
@@ -46,7 +52,6 @@ void oled_render_layer_state(void) {
   }
 
   oled_write("\n", false);
-  oled_write(get_u8_str(get_highest_layer(layer_state), ' '), false);
 }
 
 void oled_render_led_state(void) {
